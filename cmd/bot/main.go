@@ -14,14 +14,13 @@ func main() {
 		log.Println(err)
 	}
 
-	// log.Println(cfg)
 
 	bot, err := tgbotapi.NewBotAPI(cfg.Token)
 	if err != nil {
 		log.Println(err)
 	}
 
-	// bot.Debug = true
+	bot.Debug = true
 
 	telegramBot := telegtam.NewBot(bot, cfg.Messages)
 	telegramBot.Start()

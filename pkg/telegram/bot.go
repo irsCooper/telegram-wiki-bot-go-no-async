@@ -22,7 +22,6 @@ func (b *Bot) handleUpdates(updates tgbotapi.UpdatesChannel) {
 
 	for update := range updates {
 
-		log.Println("in bot")
 		log.Println(update.Message)
 
 		if update.Message == nil {

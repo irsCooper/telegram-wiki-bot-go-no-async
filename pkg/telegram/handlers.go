@@ -29,11 +29,8 @@ func (b *Bot) handleMessage(message *tgbotapi.Message) error {
 
 func (b *Bot) handleCommand(message *tgbotapi.Message) error {
 
-	log.Println(message.Command() + " handlCommand")
-
 	switch message.Command() {
 	case b.messages.C_Start: 
-		log.Println("in case")
 		return b.handleStartCommand(message)
 
 	case b.messages.Reset_Language: 
@@ -64,7 +61,7 @@ func (b *Bot) handleCommand(message *tgbotapi.Message) error {
 
 
 func (b *Bot) handleStartCommand(message *tgbotapi.Message) error {
-	log.Println("handl")
+	
 	if Start {
 		message.Text = b.messages.Bot_Is_Started
 	} else {

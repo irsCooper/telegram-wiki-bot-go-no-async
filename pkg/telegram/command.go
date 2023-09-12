@@ -15,7 +15,6 @@ func (b *Bot) Start() error {
 
 	b.handleUpdates(b.initUbdateChanel())
 
-	log.Println("com" + " " + Runs_Command)
 
 	return nil
 }
@@ -43,9 +42,6 @@ func (b *Bot) SetLanguage(message *tgbotapi.Message) error {
 	}
 
 	gowiki.SetLanguage(Language)
-	// gowiki.SetUserAgent(Language)
-
-	log.Println(Runs_Command)
 
 	if Runs_Command == b.messages.C_Start {
 		message.Text += b.messages.See_Comand
@@ -94,7 +90,6 @@ func (b *Bot) GetUserRuery(message *tgbotapi.Message) error {
 		return err
 	}
 
-	log.Println(arays)
 
 	for i := range arays {
 		text = arays[i] + "\n"
